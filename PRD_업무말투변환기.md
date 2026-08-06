@@ -129,8 +129,12 @@ AI도 사람도 "끝"의 기준이 명확해야 헤매지 않습니다. 기준 �
 # Python 버전 확인 (3.11 이상)
 python --version
 
+# uv를 사용한 가상환경 생성 및 활성화
+uv venv
+.venv\Scripts\activate
+
 # 패키지 설치
-pip install fastapi uvicorn langchain python-dotenv langchain-upstage
+uv pip install fastapi uvicorn langchain python-dotenv langchain-upstage
 
 # Git 설치 확인
 git --version
@@ -297,7 +301,7 @@ FastAPI는 Swagger UI를 기본 제공하므로 서버가 기동 중인 상태�
 3. `.gitignore` 작성 — `.env` 반드시 포함
 4. Upstage API 키 발급 및 `.env` 파일 작성
 5. `backend/requirements.txt` 작성하고 의존성의 최신 버전(use context7)을 명시해야 함
-6. 가상환경(`.venv`) 폴더를 생성하고 `backend/requirements.txt` 명시된 의존성을 가상환경 폴더에 설치해야 함
+6. uv를 사용하여 가상환경(`.venv`) 폴더를 생성하고 `backend/requirements.txt`에 명시된 의존성을 가상환경 폴더에 설치해야 함 (`uv venv` 및 `uv pip install -r backend/requirements.txt`)
 
 ---
 
@@ -311,6 +315,7 @@ FastAPI는 Swagger UI를 기본 제공하므로 서버가 기동 중인 상태�
 1. `schemas.py` — 데이터 모델 정의(요청/응답 데이터 모델 정의)
 2. `templates.py` — 프롬프트 템플릿 작성(수신 대상별 프롬프트 템플릿 작성)
 3. `tone_converter.py` — 핵심 변환 로직 구현(LangChain + Solar-Pro3 연동)
+    * model="solar-pro3"
 4. `convert.py` — API 라우터 구현
 5. `main.py` — 메인 앱 설정(FastAPI 앱 + CORS 설정)
 6. 로컬 서버 실행 및 테스트 (`uvicorn main:app --reload`)
@@ -486,9 +491,9 @@ pydantic
 ### 로컬 실행 명령어
 
 ```bash
-# 백엔드 실행
+# 백엔드 실행 (uv run을 사용하여 실행)
 cd backend
-uvicorn main:app --reload --port 8000
+uv run uvicorn main:app --reload --port 8000
 
 # 프론트엔드 확인
 # frontend/index.html을 브라우저에서 직접 열거나 VS Code Live Server 사용
