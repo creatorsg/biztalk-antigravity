@@ -83,15 +83,15 @@ AI도 사람도 "끝"의 기준이 명확해야 헤매지 않습니다. 기준 �
 
 ### 백엔드
 
-- [ ] FastAPI 서버가 로컬에서 정상 실행된다 (`uvicorn main:app`)
-- [ ] Health Check 기능이 존재해야 한다
-- [ ] `POST /api/convert` 엔드포인트가 존재한다
-- [ ] Upstage Solar-Pro3 API 호출이 정상 작동한다
-- [ ] 수신 대상(4종)에 따라 다른 프롬프트가 적용된다
-- [ ] CORS 설정이 되어 있어 프론트엔드에서 호출 가능하다
-- [ ] `.env` 파일로 API 키를 관리하고, `.gitignore`에 등록되어 있다
-- [ ] FastAPI 서버에 Staic Page(`index.html`) 라우팅 기능이 있어야 한다
-- [ ] Swagger UI(/docs)를 통해 API 문서를 브라우저에서 확인할 수 있다
+- [X] FastAPI 서버가 로컬에서 정상 실행된다 (`uvicorn main:app`)
+- [X] Health Check 기능이 존재해야 한다
+- [X] `POST /api/convert` 엔드포인트가 존재한다
+- [X] Upstage Solar-Pro3 API 호출이 정상 작동한다
+- [X] 수신 대상(4종)에 따라 다른 프롬프트가 적용된다
+- [X] CORS 설정이 되어 있어 프론트엔드에서 호출 가능하다
+- [X] `.env` 파일로 API 키를 관리하고, `.gitignore`에 등록되어 있다
+- [X] FastAPI 서버에 Staic Page(`index.html`) 라우팅 기능이 있어야 한다
+- [X] Swagger UI(/docs)를 통해 API 문서를 브라우저에서 확인할 수 있다
 
 ### 프론트엔드
 
