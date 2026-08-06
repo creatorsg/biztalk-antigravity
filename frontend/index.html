@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="수신 대상에 맞게 정중하고 자연스러운 비즈니스 말투로 본문을 자동 변환해주는 AI 업무 말투 변환기입니다.">
+    <title>업무 말투 변환기 — BizTalk Antigravity</title>
+    <!-- Google Fonts 및 Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="background-decor-1"></div>
+    <div class="background-decor-2"></div>
+
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="material-icons-round logo-icon">auto_awesome</span>
+                <h1>BizTalk Antigravity</h1>
+            </div>
+            <p class="subtitle">AI 기반 실시간 업무 말투 변환 시스템</p>
+        </header>
+
+        <main>
+            <section class="glass-card">
+                <!-- 1. 원문 입력 섹션 -->
+                <div class="input-group">
+                    <label for="inputText">
+                        <span class="material-icons-round label-icon">edit_note</span>
+                        변환할 원문 입력
+                    </label>
+                    <textarea id="inputText" placeholder="예시: 내일까지 보고서 제출 어려울 것 같음 (여기에 변환하고 싶은 내용을 자유롭게 작성해 보세요.)" maxlength="1000"></textarea>
+                    <div class="char-counter"><span id="charCount">0</span>/1000</div>
+                </div>
+
+                <!-- 2. 수신 대상 선택 섹션 -->
+                <div class="audience-section">
+                    <label>
+                        <span class="material-icons-round label-icon">groups</span>
+                        수신 대상 선택
+                    </label>
+                    <div class="audience-grid" id="audienceGrid">
+                        <button type="button" class="audience-btn active" data-target="boss">
+                            <span class="material-icons-round btn-icon">person</span>
+                            <span class="btn-text">상사 / 임원</span>
+                            <span class="btn-desc">격식 있고 공손하게</span>
+                        </button>
+                        <button type="button" class="audience-btn" data-target="colleague">
+                            <span class="material-icons-round btn-icon">handshake</span>
+                            <span class="btn-text">타팀 동료</span>
+                            <span class="btn-desc">정중하고 협조적으로</span>
+                        </button>
+                        <button type="button" class="audience-btn" data-target="client">
+                            <span class="material-icons-round btn-icon">support_agent</span>
+                            <span class="btn-text">고객 / 외부</span>
+                            <span class="btn-desc">친절하고 신뢰감 있게</span>
+                        </button>
+                        <button type="button" class="audience-btn" data-target="team">
+                            <span class="material-icons-round btn-icon">badge</span>
+                            <span class="btn-text">팀 내 동료</span>
+                            <span class="btn-desc">간결하고 명확하게</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. 변환 실행 버튼 -->
+                <div class="action-section">
+                    <button type="button" id="convertBtn">
+                        <span class="material-icons-round icon-spin-loader" id="loaderIcon" style="display: none;">sync</span>
+                        <span class="material-icons-round button-main-icon" id="defaultIcon">transform</span>
+                        <span id="convertBtnText">말투 변환하기</span>
+                    </button>
+                </div>
+
+                <!-- 4. 변환 결과 출력 섹션 -->
+                <div class="output-group">
+                    <div class="output-header">
+                        <label for="outputText">
+                            <span class="material-icons-round label-icon">forum</span>
+                            변환 결과
+                        </label>
+                        <button type="button" id="copyBtn" title="클립보드에 복사">
+                            <span class="material-icons-round" id="copyIcon">content_copy</span>
+                            <span id="copyBtnText">복사하기</span>
+                        </button>
+                    </div>
+                    <div class="textarea-wrapper">
+                        <textarea id="outputText" readonly placeholder="말투 변환 버튼을 누르면 정중한 비즈니스 텍스트가 이곳에 생성됩니다."></textarea>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 BizTalk Antigravity. Powered by Upstage Solar-Pro3 & FastAPI.</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
