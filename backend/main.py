@@ -1,8 +1,14 @@
 import os
+import sys
+
+# Add backend directory to sys.path to prevent module import error in Vercel environment
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from routers import convert
+
 
 app = FastAPI(
     title="업무 말투 변환기 API",
